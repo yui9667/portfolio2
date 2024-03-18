@@ -1,0 +1,12 @@
+@use "../styles/header";
+@use "../styles/main";
+@use "../styles/footer";
+@use "../styles/variables" as v;
+@use "../styles/mixin";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jomhuria", serif;
+}
