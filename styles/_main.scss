@@ -1,0 +1,198 @@
+@use "../styles/mixin" as m;
+@use "../styles/variables" as v;
+
+h3 {
+  @include m.fz_vw(20);
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+.aboutme {
+  @include m.flexCenter;
+  flex-direction: column;
+  text-align: center;
+
+  h2 {
+    @include m.fz_vw(40);
+    @include m.subtitle;
+
+    &::after {
+      content: "ABOUT ";
+      @include m.fz_vw(80);
+      @include m.subtitle-back;
+    }
+  }
+  .aboutme-container,
+  .aboutme-info {
+    @include m.flexCenter;
+    flex-direction: column;
+  }
+  .aboutme-img {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  p {
+    @include m.fz_vw(10);
+    font-family: v.$font-famliy;
+    margin: 0 10px 20px;
+  }
+  span {
+    color: v.$p-color;
+  }
+
+  .btn {
+    @include m.btn;
+    @include m.fz_vw(10);
+  }
+  .animation {
+    @include m.animation;
+  }
+
+  .email-linkedin {
+    a {
+      text-decoration: none;
+      color: v.$p-color;
+    }
+  }
+}
+
+.quality {
+  @include m.flexCenter;
+  flex-direction: column;
+  text-align: center;
+
+  h2 {
+    @include m.fz_vw(30);
+    @include m.subtitle;
+
+    &::after {
+      content: "Quality ";
+      @include m.fz_vw(90);
+      @include m.subtitle-back;
+    }
+  }
+  .quality-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .exp-edu-box {
+    width: 100%;
+    max-width: 310px;
+    display: flex;
+    justify-content: center;
+
+    line-height: 2;
+    .arrow {
+      padding-left: 10px;
+    }
+  }
+  .exp-edu-info {
+    font-family: v.$font-famliy;
+    h4 {
+      @include m.fz_vw(13);
+    }
+
+    h5 {
+      @include m.fz_vw(11);
+    }
+    p {
+      @include m.fz_vw(10);
+      padding: 0 0 20px 0;
+    }
+  }
+}
+
+.skills {
+  @include m.flexCenter;
+  flex-direction: column;
+  margin: 0 10px;
+  h2 {
+    text-align: center;
+    @include m.fz_vw(40);
+    @include m.subtitle;
+    &::after {
+      content: "Skills";
+      @include m.fz_vw(90);
+      @include m.subtitle-back;
+    }
+  }
+  .skill-main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 20px;
+    font-family: v.$font-famliy;
+    @include m.fz_vw(10);
+  }
+  .skill-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  .percent {
+    font-weight: bold;
+  }
+  .skill-bar {
+    width: 100%;
+    height: 10px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.199);
+    border-radius: 25px;
+    margin-top: 5px;
+  }
+  span {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-color: v.$orange-color;
+    border-radius: 25px;
+  }
+  .html,
+  .css,
+  .figma {
+    width: 80%;
+  }
+  .javascript {
+    width: 50%;
+  }
+  .react {
+    width: 40%;
+  }
+  .adobexd {
+    width: 30%;
+  }
+}
+// @keyframes bar {
+//   0% {
+//     width: 0%;
+//   }
+//   100% {
+//     width: 80%;
+//   }
+// }
+// @keyframes javascript {
+//   0% {
+//     width: 0%;
+//   }
+//   100% {
+//     width: 50%;
+//   }
+// }
+// @keyframes react {
+//   0% {
+//     width: 0%;
+//   }
+//   100% {
+//     width: 40%;
+//   }
+// }
+// @keyframes adobexd {
+//   0% {
+//     width: 0%;
+//   }
+//   100% {
+//     width: 30%;
+//   }
+// }

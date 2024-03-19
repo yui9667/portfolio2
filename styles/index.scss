@@ -3,7 +3,7 @@
 @use "../styles/footer";
 @use "../styles/variables" as v;
 @use "../styles/mixin";
-
+@use "../styles/function";
 body {
   margin: 0;
   padding: 0;
