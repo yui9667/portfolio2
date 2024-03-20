@@ -1,24 +1,18 @@
 "strict";
-const skillSection = document.querySelector(".skill-main");
-const options = {
-  threshold: 0.5,
-};
-
-const callback = (entries, observer) => {
+const callback = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      AnimationSkills();
-      observer.unobserve(entry.target);
+      console.log("The element is intersecting");
+      entry.target.style.animation = entry.target.dataset.animate;
+    } else {
+      entry.target.style.animation = "none";
     }
   });
 };
 
-const observer = new IntersectionObserver(callback, options);
-observer.observe(skillSection);
-const AnimationSkills = () => {
-  const skillBars = document.querySelectorAll(".skill-bar");
-  skillBars.forEach((bar) => {
-    const animationName = bar.dataset.animation;
-    bar.style.animation = animationName + " 3s";
-  });
-};
+let observer = new IntersectionObserver(callback);
+
+const animationItems = document.querySelectorAll(".animate");
+animationItems.forEach((item) => {
+  observer.observe(item);
+});

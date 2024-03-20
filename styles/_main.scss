@@ -69,6 +69,8 @@ h3 {
       content: "Quality ";
       @include m.fz_vw(90);
       @include m.subtitle-back;
+      letter-spacing: 6px;
+      top: -10px;
     }
   }
   .quality-container {
@@ -113,8 +115,9 @@ h3 {
     @include m.subtitle;
     &::after {
       content: "Skills";
-      @include m.fz_vw(90);
+      @include m.fz_vw(80);
       @include m.subtitle-back;
+      letter-spacing: 6px;
     }
   }
   .skill-main {
@@ -146,53 +149,71 @@ h3 {
     width: 50%;
     height: 100%;
     position: absolute;
-    background-color: v.$orange-color;
+    background-color: v.$blue-color;
     border-radius: 25px;
   }
+
   .html,
   .css,
   .figma {
+    animation: bar 3s;
     width: 80%;
   }
   .javascript {
+    animation: javascript 3s;
     width: 50%;
   }
   .react {
+    animation: react 3s;
     width: 40%;
   }
   .adobexd {
+    animation: adobexd 3s;
     width: 30%;
   }
 }
-// @keyframes bar {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 80%;
-//   }
-// }
-// @keyframes javascript {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 50%;
-//   }
-// }
-// @keyframes react {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 40%;
-//   }
-// }
-// @keyframes adobexd {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 30%;
-//   }
-// }
+@keyframes bar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+@keyframes javascript {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+@keyframes react {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 40%;
+  }
+}
+@keyframes adobexd {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 30%;
+  }
+}
+
+.gallery {
+  h2 {
+    text-align: center;
+    @include m.subtitle;
+    @include m.fz_vw(40);
+    &::after {
+      content: "GALLERY";
+      @include m.fz_vw(80);
+      @include m.subtitle-back;
+    }
+  }
+}
