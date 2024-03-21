@@ -261,13 +261,26 @@
             <a href="#"></a>
           </div>
           <div class="project">
-            <h4></h4>
+            <h4>Genesis</h4>
             <a href="#"></a>
           </div>
         </div>
-        <div class="gallery-container"></div>
+      </section>
+      <section class="contact">
+        <h2>CONTACT ME</h2>
+        <div class="contact-container"></div>
+        <form onsubmit="sendEmail(); reset(); return false;">
+          <h3>GET IN TOUCH</h3>
+          <input type="text" id="name" placeholder="Name" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="text" id="phone" placeholder="Phone Number" />
+          <textarea id="message" rows="4" placeholder="Message"></textarea>
+          <button class="btn" type="submit">Send</button>
+        </form>
       </section>
     </main>
+    <footer></footer>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
