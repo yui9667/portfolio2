@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Jomhuria&family=Kameron:wght@400..700&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/a2c3cb34bc.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Yui Portflio</title>
   </head>
   <body>
@@ -29,9 +33,10 @@
 
       <div class="header-container">
         <img class="profile" src="images/profile.png" alt="My selfie" />
-
-        <div class="animated-text">I'm <span></span></div>
-        <h1>Junior Front-End Developer</h1>
+        <div class="header-box">
+          <div class="animated-text">I'm <span></span></div>
+          <h1>Junior Front-End Developer</h1>
+        </div>
       </div>
     </header>
     <main>
@@ -43,31 +48,31 @@
             src="images/aboutme.png"
             alt="Anoter selfie for about mylsef"
           />
-          <h3>Junior UX Designer & Front-End Developer</h3>
-          <p>
-            I am a junior UX and Front End Developer. I am constantly passionate
-            about thrilling new skills and creating websites.
-          </p>
-          <div class="aboutme-info">
-            <div class="name-birthday">
-              <p>Name: <span>Yui Jensen</span></p>
-              <p>Birthday: <span>07 June 1996</span></p>
+          <div class="aboutme-info-container">
+            <h3>Junior UX Designer & Front-End Developer</h3>
+            <h4>
+              I am a junior UX and Front End Developer. I am constantly
+              passionate about thrilling new skills and creating websites.
+            </h4>
+            <div class="aboutme-info">
+              <div class="name-birthday-email">
+                <p>Name: <span>Yui Jensen</span></p>
+                <p>Birthday: <span>07 June 1996</span></p>
+                <p>Email: <span>kyanyui67@gamil.com</span></p>
+              </div>
+              <div class="number-address-link">
+                <p>Phone Number: <span>+ 46 072 83 85 430</span></p>
+                <p>
+                  Address: <span>Limhamnsvägen 127B 216 46 Malmö Sweden</span>
+                </p>
+                <p>
+                  LinkedIn: <span><a href="#">Click here</a></span>
+                </p>
+              </div>
             </div>
-            <div class="number-address">
-              <p>Phone Number: <span>+ 46 072 83 85 430</span></p>
-              <p>
-                Address: <span>Limhamnsvägen 127B 216 46 Malmö Sweden</span>
-              </p>
-            </div>
-            <div class="email-linkedin">
-              <p>Email: <span>kyanyui67@gamil.com</span></p>
-              <p>
-                LinkedIn: <span><a href="#">Click here</a></span>
-              </p>
-            </div>
+            <button class="btn animation">Reseme</button>
           </div>
         </div>
-        <button class="btn animation">Reseme</button>
       </section>
 
       <section class="quality">
@@ -111,7 +116,7 @@
             </div>
             <div class="exp-edu-box">
               <img
-                class="arrow"
+                class="arrow google"
                 src="images/arrow.svg"
                 alt="Line with a circle point "
               />
@@ -136,7 +141,7 @@
                 alt="Line with a circle point "
               />
               <div class="exp-edu-info">
-                <h4 class="google-title">Bartender</h4>
+                <h4>Bartender</h4>
                 <h5>Ramen to Biru 2024 - current</h5>
                 <p>
                   I am engaged in serving beer and replenishing soft drinks
@@ -163,7 +168,7 @@
                 </p>
               </div>
             </div>
-            <div class="exp-edu-box">
+            <div class="exp-edu-box box-hotel">
               <img
                 class="arrow"
                 src="images/arrow.svg"
@@ -171,7 +176,7 @@
               />
               <div class="exp-edu-info">
                 <h4 class="google-title">Receptionist</h4>
-                <h5>Chisun Hotel Hiroshima 2018 - 2019, 2021- 2021</h5>
+                <h5>Chisun Hotel Hiroshima,2018 - 2019, 2021- 2021</h5>
                 <p>
                   I oversaw the check-in and check-out process, warmly welcoming
                   guests upon their arrival. I contacted travel agencies to
@@ -244,33 +249,36 @@
       <section class="gallery">
         <h2>MY PORTFOLIO</h2>
         <div class="project-container">
-          <div class="project">
-            <h4>Todo List</h4>
-            <a href="#"></a>
-          </div>
-          <div class="project">
-            <h4>Quiz</h4>
-            <a href="#"></a>
-          </div>
-          <div class="project">
-            <h4>Tic Tac Toe</h4>
-            <a href="#"></a>
-          </div>
-          <div class="project">
-            <h4>Genesis</h4>
-            <a href="#"></a>
-          </div>
-          <div class="project">
-            <h4>Genesis</h4>
-            <a href="#"></a>
-          </div>
+          <a href="#">
+            <img src="images/tic-tac-toe.png" alt="Tic-tac-toe picture" />
+          </a>
+          <a href="#">
+            <img src="images/dice.png" alt="Two dices" />
+          </a>
+          <a href="#">
+            <img
+              src="images/rock.png"
+              alt="Two kids are playing the rock-scissor-paper game. On the right side is a scissor, and the left side is a rock"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="images/quiz.png"
+              alt="A question mark in the right side"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="images/genesis.png"
+              alt="A woman walking on the rainbow carpet in the sky"
+            />
+          </a>
         </div>
       </section>
       <section class="contact">
         <h2>CONTACT ME</h2>
         <div class="contact-container"></div>
         <form onsubmit="sendEmail(); reset(); return false;">
-          <h3>GET IN TOUCH</h3>
           <input type="text" id="name" placeholder="Name" required />
           <input type="email" id="email" placeholder="Email" required />
           <input type="text" id="phone" placeholder="Phone Number" />
@@ -279,8 +287,29 @@
         </form>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="logo"><img src="images/logo.svg" alt="logo" /></div>
+      <p>Pictures are provided by Unsplash</p>
+      <div class="social-media">
+        <a
+          class="fa-brands fa-facebook-f"
+          style="color: #ffffff"
+          href="https://www.facebook.com/profile.php?id=100004216481655"
+        ></a>
+        <a
+          class="fa-brands fa-linkedin"
+          style="color: #ffffff"
+          href="https://www.linkedin.com/in/yui-jensen67/"
+        ></a>
+        <a
+          class="fa-brands fa-github"
+          style="color: #ffffff"
+          href="https://github.com/yui9667"
+        ></a>
+      </div>
+    </footer>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+
     <script src="script.js"></script>
   </body>
 </html>

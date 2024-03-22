@@ -1,0 +1,43 @@
+@use "../styles/mixin" as m;
+@use "../styles/variables" as v;
+
+footer {
+  background-color: v.$orange-color;
+  width: 100%;
+
+  .logo img {
+    width: 40px;
+    height: 50px;
+    padding-left: 10px;
+  }
+  p {
+    display: flex;
+    justify-content: center;
+    color: v.$white-color;
+    font-family: v.$font-famliy;
+    letter-spacing: 2px;
+  }
+  .social-media {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 0 15px 0;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  footer {
+    .logo img {
+      width: 60px;
+      height: 80px;
+    }
+    p {
+      @include m.fz_vw(22);
+    }
+    .social-media {
+      font-size: 30px;
+    }
+  }
+}

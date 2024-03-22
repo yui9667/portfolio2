@@ -1,29 +1,31 @@
 @use "../styles/mixin" as m;
 @use "../styles/variables" as v;
 
-// .bg-pattern {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 180vw;
-//   height: 100vh;
-//   opacity: 0.1;
-// }
-// .polka {
-// background-image: radial-gradient(#000 4px, #ffffff 4px);
-// background-size: 39px 39px;
-// }
+.bg-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180vw;
+  height: 100vh;
+  opacity: 0.1;
+}
+.polka {
+  background-image: radial-gradient(v.$orange-color 4px, #ffffff 4px);
+  background-size: 39px 39px;
+  z-index: -3;
+}
 header {
   background-color: v.$blue-color;
-  // height: 100vh;
-  // width: 185vw;
 
   .nav-container {
     @include m.flexBetween;
 
-    .logo {
+    .logo img {
       padding-left: 10px;
       line-height: 5;
+      width: 40px;
+      height: 50px;
+      padding-left: 10px;
     }
     ul {
       display: flex;
@@ -130,7 +132,64 @@ header {
 
 /*Resposive Design*/
 @media (min-width: 700px) {
-  header .nav-container li {
-    display: flex;
+  header {
+    padding-bottom: 20px;
+    .nav-container li {
+      display: flex;
+      padding-top: 15px;
+    }
+    .logo {
+      padding-top: 15px;
+    }
+    .header-container {
+      flex-direction: row;
+    }
+    .animated-text,
+    h1 {
+      @include m.fz_vw(40);
+    }
+  }
+}
+@media (min-width: 1000px) {
+  header {
+    .logo {
+      padding-left: 15px;
+    }
+    .header-container {
+      .profile {
+        max-width: 350px;
+      }
+    }
+
+    .animated-text,
+    h1 {
+      @include m.fz_vw(60);
+    }
+  }
+}
+
+@media (min-width: 1700px) {
+  header {
+    .nav-container {
+      .logo img {
+        width: 100px;
+        height: auto;
+      }
+      li a {
+        @include m.fz_vw(40);
+        letter-spacing: 3px;
+      }
+    }
+    .header-container {
+      gap: 100px;
+      .profile {
+        max-width: 450px;
+      }
+    }
+
+    .animated-text,
+    h1 {
+      @include m.fz_vw(90);
+    }
   }
 }
