@@ -309,6 +309,21 @@ h3 {
 .btn {
   @include m.btn;
   @include m.fz_vw(10);
+
+  &:hover {
+    animation: btnMove 3s;
+  }
+}
+@keyframes btnMove {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 .animation {
   @include m.animation;
