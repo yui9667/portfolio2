@@ -2,12 +2,12 @@
 @use "../styles/variables" as v;
 
 footer {
-  background-color: v.$orange-color;
+  background-color: v.$nav-footer;
   width: 100%;
   position: absolute;
   .logo img {
     width: 40px;
-    height: 50px;
+    height: 60px;
     padding-left: 10px;
   }
   p {
@@ -16,11 +16,14 @@ footer {
     color: v.$white-color;
     font-family: v.$font-famliy;
     letter-spacing: 2px;
+    padding: 0 10px;
+    text-align: center;
   }
   .social-media {
-    margin: 10px;
+    margin: 5px;
     display: flex;
     justify-content: center;
+
     gap: 30px;
     padding: 0 0 15px 0;
   }
@@ -33,13 +36,19 @@ footer {
   footer {
     .logo img {
       width: 60px;
-      height: 80px;
+      height: 70px;
     }
     p {
-      @include m.fz_vw(22);
+      @include m.fz_vw(18);
     }
     .social-media {
       font-size: 30px;
+    }
+    .social-p-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 2%;
     }
   }
 }

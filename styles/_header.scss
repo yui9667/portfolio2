@@ -15,36 +15,76 @@
   z-index: -3;
 }
 header {
-  background-color: v.$blue-color;
+  background-color: #028391;
 
-  .nav-container {
+  .navbar {
     @include m.flexBetween;
+    padding: 0 20px;
+  }
+  .nav-menu {
+    position: fixed;
+    left: -115%;
+    top: -15px;
+    gap: 0;
+    background-color: v.$nav-footer;
+    width: 100%;
+    transition: 0.3s;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 80px;
+    z-index: 5;
+    padding: 30px 10px 0;
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+  .nav-item {
+    list-style: none;
+    margin: auto 0;
+    text-align: center;
+  }
 
-    .logo img {
-      padding-left: 10px;
-      line-height: 5;
-      width: 40px;
-      height: 50px;
-      padding-left: 10px;
-    }
-    ul {
-      display: flex;
-      justify-content: space-between;
-      padding-right: 20px;
-    }
-    li {
-      list-style: none;
-      padding-right: 20px;
-      display: none;
-      a {
-        padding-right: 20px;
-        text-decoration: none;
-        color: v.$white-color;
-        font-size: 26px;
-        letter-spacing: 2px;
-      }
+  a {
+    text-decoration: none;
+    color: v.$white-color;
+    @include m.fz_vw(26);
+    letter-spacing: 2px;
+  }
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  .nav-link {
+    transition: 0.2s ease;
+    &:hover {
+      color: #ffcbb0;
     }
   }
+
+  .hamburger {
+    cursor: pointer;
+    z-index: 6;
+    padding: 10px;
+  }
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: v.$white-color;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
   .header-container {
     @include m.flexCenter;
     align-items: center;
@@ -55,8 +95,21 @@ header {
       max-width: 250px;
     }
   }
+  .content {
+    padding: 16px;
+  }
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 95vw;
+    background-color: v.$nav-footer;
+    z-index: 100;
+  }
+  .sticky + .content {
+    padding-top: 60px;
+  }
   .animated-text {
-    font-size: 2rem;
+    @include m.fz_vw(32);
     font-weight: 600;
     min-width: 280px;
     letter-spacing: 2px;
@@ -67,7 +120,9 @@ header {
     position: relative;
     &::before {
       content: "Yui Jensen";
-      color: v.$orange-color;
+      color: v.$blue-color;
+      font-weight: normal;
+      -webkit-text-stroke: 1px v.$white-color;
       animation: words 10s infinite;
     }
     &::after {
@@ -79,8 +134,6 @@ header {
       border-left: 2px solid v.$orange-color;
       right: -12px;
       animation: cursor 0.8s infinite, typing 20s steps(14) infinite;
-      // background-image: radial-gradient(#016874 4px, #1b8f9c 4px);
-      // background-size: 40px 40px;
     }
   }
   @keyframes cursor {
@@ -124,33 +177,9 @@ header {
     }
   }
   h1 {
-    font-size: 2rem;
+    @include m.fz_vw(32);
     color: v.$white-color;
     letter-spacing: 2px;
-  }
-}
-
-/*Hamburger menu*/
-.container-ham {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-  // height: 100vh;
-  .hamburger-menu {
-    width: 35px;
-    height: 30px;
-    top: 50px;
-    left: 50px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .line {
-    width: 100%;
-    height: 3px;
-    background-color: aqua;
   }
 }
 
@@ -158,9 +187,21 @@ header {
 @media (min-width: 700px) {
   header {
     padding-bottom: 20px;
-    .nav-container li {
+    .nav-bar {
+      position: sticky;
+      background-color: v.$orange-color;
+    }
+    .nav-menu {
       display: flex;
-      padding-top: 15px;
+      position: relative;
+      left: auto;
+      top: auto;
+      flex-direction: row;
+      background: transparent;
+      padding: 0;
+    }
+    a {
+      line-height: 3;
     }
     .logo {
       padding-top: 15px;
@@ -172,8 +213,8 @@ header {
     h1 {
       @include m.fz_vw(40);
     }
-    .hamburger-nav,
-    hidden {
+
+    .hamburger {
       display: none;
     }
   }
@@ -188,18 +229,23 @@ header {
         max-width: 350px;
       }
     }
-
+    .nav-item {
+      padding-right: 20px;
+    }
     .animated-text,
     h1 {
       @include m.fz_vw(60);
+    }
+    .sticky {
+      width: 98vw;
     }
   }
 }
 
 @media (min-width: 1700px) {
   header {
-    .nav-container {
-      .logo img {
+    .navbar {
+      .logo {
         width: 100px;
         height: auto;
       }

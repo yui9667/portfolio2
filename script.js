@@ -21,7 +21,7 @@ function sendEmail() {
   Email.send({
     SecureToken: "8e4b2ae7-bfa9-417d-be33-ec974d827a1e",
     To: "kyanyui67@gmail.com",
-    From: document.getElementById("email").value,
+    From: "yuiyokote67@gmail.com",
     Subject: "New Contact Form Enquiry",
     Body:
       "Name: " +
@@ -35,4 +35,33 @@ function sendEmail() {
   }).then((message) => {
     alert("Email sent successfully!");
   });
+}
+
+/*Hamburger Menu */
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+document.querySelectorAll(".nav-link").forEach((n) =>
+  n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  })
+);
+
+/*Sticky nav */
+window.onscroll = function () {
+  myFunciton();
+};
+const navBar = document.getElementById("navbar");
+const sticky = navBar.offsetTop;
+function myFunciton() {
+  if (window.pageYOffset > sticky) {
+    navBar.classList.add("sticky");
+  } else {
+    navBar.classList.remove("sticky");
+  }
 }
