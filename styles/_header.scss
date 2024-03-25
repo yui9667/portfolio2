@@ -58,7 +58,7 @@ header {
   .nav-link {
     transition: 0.2s ease;
     &:hover {
-      color: #ffcbb0;
+      color: v.$pastel-orange;
     }
   }
 
@@ -213,7 +213,9 @@ header {
     h1 {
       @include m.fz_vw(40);
     }
-
+    .sticky {
+      width: 97vw;
+    }
     .hamburger {
       display: none;
     }

@@ -33,15 +33,22 @@ h3 {
   }
   h4 {
     font-weight: lighter;
-    @include m.fz_vw(13);
+    @include m.fz_vw(15);
+    letter-spacing: 2px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
   }
   p {
     @include m.fz_vw(10);
     font-family: v.$font-famliy;
     margin: 0 10px 20px;
   }
-  span {
+  span a {
     color: v.$p-color;
+    &:hover {
+      color: v.$pastel-orange;
+    }
   }
 
   .number-address-link,
@@ -313,6 +320,10 @@ h3 {
   &:hover {
     animation: btnMove 3s;
   }
+  a {
+    color: v.$white-color;
+    text-decoration: none;
+  }
 }
 @keyframes btnMove {
   0% {
@@ -331,6 +342,7 @@ h3 {
 
 @media (min-width: 700px) {
   .aboutme {
+    margin: 0 20px;
     h2 {
       @include m.fz_vw(80);
       &::after {
@@ -339,7 +351,7 @@ h3 {
         top: -15px;
       }
     }
-    margin: 0 20px;
+
     .aboutme-container {
       flex-direction: row;
       letter-spacing: 1px;
@@ -356,6 +368,7 @@ h3 {
       }
       h4 {
         @include m.fz_vw(20);
+        max-width: 780px;
       }
     }
     .name-birthday-email,
@@ -568,6 +581,7 @@ h3 {
       }
       h4 {
         @include m.fz_vw(40);
+        max-width: 1000px;
       }
     }
     .name-birthday-email,

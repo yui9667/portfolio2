@@ -45,9 +45,7 @@
   margin: 20px 0;
   cursor: pointer;
   &:hover {
-    color: v.$orange-color;
-    background-color: v.$white-color;
-    border: 1px solid v.$orange-color;
+    background-color: #fe7349;
   }
 }
 @mixin animation {
