@@ -21,42 +21,35 @@ h3 {
       @include m.subtitle-back;
     }
   }
-  .aboutme-container,
-  .aboutme-info {
+  .aboutme-container {
     @include m.flexCenter;
     flex-direction: column;
-  }
 
-  .aboutme-img {
-    width: 100%;
-    max-width: 200px;
-  }
-  h4 {
-    font-weight: lighter;
-    @include m.fz_vw(15);
-    letter-spacing: 2px;
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
-  }
-  p {
-    @include m.fz_vw(10);
-    font-family: v.$font-famliy;
-    margin: 0 10px 20px;
-  }
-  span a {
-    color: v.$p-color;
-    &:hover {
-      color: v.$pastel-orange;
-    }
-  }
-
-  .number-address-link,
-  .name-birthday-email {
-    a {
-      text-decoration: none;
-      color: v.$p-color;
-      justify-content: flex-start;
+    .aboutme-info-container {
+      .aboutme-img {
+        width: 100%;
+        max-width: 300px;
+      }
+      h4 {
+        font-weight: lighter;
+        @include m.fz_vw(5);
+        letter-spacing: 2px;
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        background-color: #000;
+      }
+      p {
+        @include m.fz_vw(10);
+        font-family: v.$font-family;
+        margin: 0 10px 20px;
+      }
+      span a {
+        color: v.$p-color;
+        &:hover {
+          color: v.$pastel-orange;
+        }
+      }
     }
   }
 }
@@ -95,7 +88,7 @@ h3 {
     }
   }
   .exp-edu-info {
-    font-family: v.$font-famliy;
+    font-family: v.$font-family;
     h4 {
       @include m.fz_vw(13);
     }
@@ -131,7 +124,7 @@ h3 {
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 50px;
     grid-row-gap: 20px;
-    font-family: v.$font-famliy;
+    font-family: v.$font-family;
     @include m.fz_vw(10);
   }
   .skill-info {
@@ -211,9 +204,7 @@ h3 {
 }
 
 .gallery {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include m.flexCenter;
   align-items: center;
   h2 {
     text-align: center;
@@ -227,18 +218,13 @@ h3 {
   }
 
   .project-container {
-    display: grid;
-    margin: auto 0;
-    grid-gap: 10px;
-    grid-template-columns: repeat(10, 1fr);
-    width: 100%;
-    max-width: 280px;
-    img {
+    @include m.flexCenter;
+    .project-box {
       width: 100%;
-      height: 100%;
-      display: block;
+      max-width: 400px;
+      height: 100px;
+      background-color: #000;
     }
-
     a {
       color: #000;
       text-decoration: none;
@@ -246,32 +232,6 @@ h3 {
       letter-spacing: 2px;
       position: relative;
       @include m.fz_vw(13);
-    }
-
-    a:nth-child(1) {
-      grid-column: 5/11;
-      grid-row: 6/9;
-      @include m.project-img-hover("Tic Tac Toe / JavaScript");
-    }
-    a:nth-child(2) {
-      grid-column: 1/5;
-      grid-row: 6/9;
-      @include m.project-img-hover("Guess Number / JavaScript");
-    }
-    a:nth-child(3) {
-      grid-column: 5/11;
-      grid-row: 1/3;
-      @include m.project-img-hover("Japanese Typing Game / JavaScript");
-    }
-    a:nth-child(4) {
-      grid-column: 5/11;
-      grid-row: 3/6;
-      @include m.project-img-hover("Quiz / JavaScript");
-    }
-    a:nth-child(5) {
-      grid-column: 1/5;
-      grid-row: 1/6;
-      @include m.project-img-hover("Genesis/ Website");
     }
   }
 }
@@ -291,7 +251,7 @@ h3 {
   }
   .contact-container {
     @include m.flexCenter;
-    font-family: v.$font-famliy;
+    font-family: v.$font-family;
   }
   form {
     @include m.flexCenter;
@@ -299,7 +259,7 @@ h3 {
     padding: 2vw 4vw;
     width: 90%;
     border-radius: 10px;
-    font-family: v.$font-famliy;
+    font-family: v.$font-family;
   }
   input,
   textarea {
@@ -360,22 +320,15 @@ h3 {
       width: 100%;
       max-width: 320px;
     }
-    .aboutme-info-container,
-    .aboutme-info {
+    .aboutme-info-container {
       flex-direction: row;
       h3 {
         @include m.fz_vw(35);
       }
       h4 {
         @include m.fz_vw(20);
-        max-width: 780px;
-      }
-    }
-    .name-birthday-email,
-    .number-address-link {
-      p {
-        @include m.fz_vw(11);
-        text-align: left;
+        font-weight: 200;
+        max-width: 800px;
       }
     }
   }
@@ -441,14 +394,14 @@ h3 {
       }
     }
 
-    .project-container {
-      width: 100%;
-      max-width: 600px;
-      flex-direction: row;
-      a {
-        @include m.fz_vw(16);
-      }
-    }
+    // .project-container {
+    //   width: 100%;
+    //   max-width: 600px;
+    //   flex-direction: row;
+    //   a {
+    //     @include m.fz_vw(16);
+    //   }
+    // }
   }
   .contact {
     h2 {
@@ -478,20 +431,12 @@ h3 {
         top: -15px;
       }
     }
-    .aboutme-info-container,
-    .aboutme-info {
+    .aboutme-info-container {
       h3 {
         @include m.fz_vw(45);
       }
       h4 {
         @include m.fz_vw(25);
-      }
-    }
-    .name-birthday-email,
-    .number-address-link {
-      p {
-        padding-top: 10px;
-        @include m.fz_vw(16);
       }
     }
   }
@@ -574,20 +519,13 @@ h3 {
         @include m.fz_vw(200);
       }
     }
-    .aboutme-info-container,
-    .aboutme-info {
+    .aboutme-info-container {
       h3 {
         @include m.fz_vw(60);
       }
       h4 {
-        @include m.fz_vw(40);
-        max-width: 1000px;
-      }
-    }
-    .name-birthday-email,
-    .number-address-link {
-      p {
-        @include m.fz_vw(20);
+        @include m.fz_vw(50);
+        max-width: 1200px;
       }
     }
   }

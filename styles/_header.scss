@@ -15,7 +15,7 @@
   z-index: -3;
 }
 header {
-  background-color: #028391;
+  background-color: #2d2d2d !important;
 
   .navbar {
     @include m.flexBetween;
@@ -183,7 +183,7 @@ header {
   }
 }
 
-/*Resposive Design*/
+/*Responsive Design*/
 @media (min-width: 700px) {
   header {
     padding-bottom: 20px;
