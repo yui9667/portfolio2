@@ -205,7 +205,9 @@ h3 {
 
 .gallery {
   @include m.flexCenter;
+  flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
   h2 {
     text-align: center;
     @include m.subtitle;
@@ -219,11 +221,30 @@ h3 {
 
   .project-container {
     @include m.flexCenter;
+    flex-direction: column;
+
     .project-box {
-      width: 100%;
-      max-width: 400px;
-      height: 100px;
-      background-color: #000;
+      background-color: aqua;
+      @include m.flexCenter;
+      flex-direction: column;
+      margin: 20px;
+
+      img {
+        padding-top: 20px;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+      }
+      .description {
+        @include m.fz_vw(20);
+        font-weight: 200;
+        text-align: center;
+        width: 100%;
+        max-width: 250px;
+        button {
+          margin-bottom: 20px;
+        }
+      }
     }
     a {
       color: #000;

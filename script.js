@@ -30,7 +30,7 @@ function sendEmail() {
       document.getElementById("email").value +
       "<br>Phone Number: " +
       document.getElementById("phone").value +
-      "<br>Meseage: " +
+      "<br>Message: " +
       document.getElementById("message").value,
   }).then((message) => {
     alert("Email sent successfully!");

@@ -15,7 +15,7 @@
   z-index: -3;
 }
 header {
-  background-color: #2d2d2d !important;
+  background-color: v.$blue-color;
 
   .navbar {
     @include m.flexBetween;
