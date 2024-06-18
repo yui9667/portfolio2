@@ -53,15 +53,13 @@ document.querySelectorAll(".nav-link").forEach((n) =>
 );
 
 /*Sticky nav */
-window.onscroll = function () {
-  myFunciton();
-};
+
 const navBar = document.getElementById("navbar");
-const sticky = navBar.offsetTop;
-function myFunciton() {
-  if (window.pageYOffset > sticky) {
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 100) {
     navBar.classList.add("sticky");
   } else {
     navBar.classList.remove("sticky");
   }
-}
+});

@@ -19,22 +19,22 @@ header {
 
   .navbar {
     @include m.flexBetween;
-    padding: 0 20px;
+    padding: 0 10px;
   }
   .nav-menu {
     position: fixed;
     left: -115%;
     top: -15px;
-    gap: 0;
     background-color: v.$nav-footer;
     width: 100%;
     transition: 0.3s;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    gap: 80px;
+    gap: 50px;
     z-index: 5;
-    padding: 30px 10px 0;
+    padding: 40px 0;
+    margin: 0 auto;
   }
   .nav-menu.active {
     left: 0;
@@ -101,9 +101,11 @@ header {
   .sticky {
     position: fixed;
     top: 0;
-    width: 95vw;
+    width: 97vw;
     background-color: v.$nav-footer;
     z-index: 100;
+    padding: 0 10px;
+    transition: 0.3s;
   }
   .sticky + .content {
     padding-top: 60px;
@@ -198,7 +200,7 @@ header {
       top: auto;
       flex-direction: row;
       background: transparent;
-      padding: 0;
+      padding: 0 30px 0 0;
     }
     a {
       line-height: 3;
@@ -214,7 +216,7 @@ header {
       @include m.fz_vw(40);
     }
     .sticky {
-      width: 97vw;
+      width: 96vw;
     }
     .hamburger {
       display: none;
