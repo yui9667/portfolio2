@@ -57,7 +57,7 @@ document.querySelectorAll(".nav-link").forEach((n) =>
 const navBar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY >= 100) {
+  if (window.scrollY >= 60) {
     navBar.classList.add("sticky");
   } else {
     navBar.classList.remove("sticky");

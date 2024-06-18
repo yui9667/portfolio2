@@ -211,7 +211,7 @@ h3 {
     @include m.subtitle;
     @include m.fz_vw(40);
     &::after {
-      content: "GALLERY";
+      content: "PROJECTS";
       @include m.fz_vw(80);
       @include m.subtitle-back;
     }
