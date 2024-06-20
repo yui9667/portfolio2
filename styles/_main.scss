@@ -253,7 +253,7 @@ h3 {
         }
       }
       button {
-        width: 70px;
+        width: 90px;
         height: 25px;
         font-family: v.$font-family;
         background-color: v.$orange-color;
@@ -268,7 +268,7 @@ h3 {
         margin: 10px;
 
         a {
-          @include m.fz_vw(6);
+          @include m.fz_vw(7);
           color: v.$white-color;
         }
       }
