@@ -268,7 +268,7 @@ h3 {
         margin: 10px;
 
         a {
-          @include m.fz_vw(8);
+          @include m.fz_vw(6);
           color: v.$white-color;
         }
       }
@@ -658,10 +658,6 @@ h3 {
     @include m.fz_vw(22);
   }
   .gallery .project-container {
-    // a {
-    //   @include m.fz_vw(25);
-    // }
-
     .project-box {
       max-width: 100%;
       width: 500px;
