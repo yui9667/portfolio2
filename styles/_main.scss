@@ -1,5 +1,5 @@
-@use "../styles/mixin" as m;
-@use "../styles/variables" as v;
+@use '../styles/mixin' as m;
+@use '../styles/variables' as v;
 
 h3 {
   @include m.fz_vw(20);
@@ -16,7 +16,7 @@ h3 {
     @include m.subtitle;
 
     &::after {
-      content: "ABOUT ";
+      content: 'ABOUT ';
       @include m.fz_vw(80);
       @include m.subtitle-back;
     }
@@ -62,7 +62,7 @@ h3 {
     @include m.subtitle;
 
     &::after {
-      content: "Quality ";
+      content: 'Quality ';
       @include m.fz_vw(90);
       @include m.subtitle-back;
       letter-spacing: 6px;
@@ -110,7 +110,7 @@ h3 {
     @include m.fz_vw(40);
     @include m.subtitle;
     &::after {
-      content: "Skills";
+      content: 'Skills';
       @include m.fz_vw(80);
       @include m.subtitle-back;
       letter-spacing: 6px;
@@ -211,7 +211,7 @@ h3 {
     @include m.subtitle;
     @include m.fz_vw(40);
     &::after {
-      content: "PROJECTS";
+      content: 'PROJECTS';
       @include m.fz_vw(80);
       @include m.subtitle-back;
     }
@@ -292,7 +292,7 @@ h3 {
     @include m.subtitle;
     @include m.fz_vw(40);
     &::after {
-      content: "CONTACT";
+      content: 'CONTACT';
       @include m.fz_vw(80);
       @include m.subtitle-back;
     }
@@ -583,94 +583,43 @@ h3 {
 }
 @media (min-width: 1700px) {
   .aboutme {
-    h2 {
-      @include m.fz_vw(120);
-      &::after {
-        @include m.fz_vw(200);
-      }
-    }
     .aboutme-container {
       .aboutme-img {
-        max-width: 500px;
+        max-width: 350px;
       }
     }
     .aboutme-info-container {
-      h3 {
-        @include m.fz_vw(60);
-      }
       p {
-        @include m.fz_vw(30);
-        max-width: 1000px;
+        width: 100%;
+        max-width: 900px;
       }
     }
   }
-  .btn {
-    width: 170px;
-    height: 60px;
-    @include m.fz_vw(20);
-  }
+
   .quality {
-    h2 {
-      @include m.fz_vw(100);
-      &::after {
-        @include m.fz_vw(230);
-        top: 0px;
-      }
-    }
-
-    .exp-edu-container h3 {
-      @include m.fz_vw(60);
-    }
     .exp-edu-box {
-      max-width: 800px;
+      max-width: 600px;
     }
-    .arrow {
-      height: 400px;
-    }
+  }
 
-    .exp-edu-info {
-      h4 {
-        @include m.fz_vw(40);
-      }
-
-      h5 {
-        @include m.fz_vw(30);
-      }
-      p {
-        @include m.fz_vw(22);
-      }
-    }
-  }
-  .skills,
-  .gallery,
-  .contact {
-    h2 {
-      @include m.fz_vw(120);
-      &::after {
-        @include m.fz_vw(200);
-      }
-    }
-  }
-  .skills,
-  .skill-main,
-  .skill-info,
-  p {
-    @include m.fz_vw(22);
-  }
   .gallery .project-container {
     .project-box {
       max-width: 100%;
-      width: 500px;
+      width: 400px;
 
-      min-height: 500px;
+      min-height: 400px;
       img {
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
       }
       .description {
         text-align: center;
         width: 100%;
-        max-width: 500px;
+        max-width: 400px;
+
+        h5 {
+          @include m.fz_vw(30);
+        }
         p {
           @include m.fz_vw(15);
         }
@@ -683,15 +632,6 @@ h3 {
           @include m.fz_vw(13);
         }
       }
-    }
-  }
-
-  .contact {
-    input,
-    textarea {
-      width: 100%;
-      max-width: 700px;
-      @include m.fz_vw(22);
     }
   }
 }
